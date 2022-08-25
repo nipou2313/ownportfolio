@@ -56,7 +56,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '#navbar .nav-link', function(e) {
+  on('click', '.nav-link', function(e) {
     let section = select(this.hash)
     if (section) {
       e.preventDefault()
@@ -64,7 +64,7 @@
       let navbar = select('#navbar')
       let header = select('#header')
       let sections = select('section', true)
-      let navlinks = select('#navbar .nav-link', true)
+      let navlinks = select('.nav-link', true)
 
       navlinks.forEach((item) => {
         item.classList.remove('active')
@@ -116,7 +116,7 @@
 
       if (initial_nav) {
         let header = select('#header')
-        let navlinks = select('#navbar .nav-link', true)
+        let navlinks = select('.nav-link', true)
 
         header.classList.add('header-top')
 
@@ -136,6 +136,37 @@
       }
     }
   });
+  //click postes
+
+let sectionAct = select("#ActAsso");
+on('click','#portfolio',function(){
+  sectionAct.classList.add("sectionAct");
+
+});
+  on('click', "#abc", function() {
+      sectionAct.classList.remove("sectionAct");
+    });
+  on('click', "#def", function() {
+      sectionAct.classList.remove("sectionAct");
+    });
+  on('click', "#hij", function() {
+      sectionAct.classList.remove("sectionAct");
+    });
+  on('click', "#klm", function() {
+      sectionAct.classList.remove("sectionAct");
+    });
+  on('click', "#nop", function() {
+      sectionAct.classList.remove("sectionAct");
+    });
+  on('click', "#qrs", function() {
+      sectionAct.classList.remove("sectionAct");
+    });
+  on('click', "#tuv", function() {
+      sectionAct.classList.remove("sectionAct");
+    });
+
+
+  
 
   /**
    * Skills animation
@@ -200,8 +231,9 @@
         e.preventDefault();
         portfolioFilters.forEach(function(el) {
           el.classList.remove('filter-active');
+          this.classList.add('filter-active');  
         });
-        this.classList.add('filter-active');
+        // this.classList.add('filter-active');
 
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
